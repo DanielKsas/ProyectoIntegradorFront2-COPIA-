@@ -8,7 +8,7 @@
 }
 
 .custom-navbar {
-  height: 100px;
+  height: 50px;
   background-color: var(--purple) !important;
   padding: 0.5rem 1rem;
   display: flex;
@@ -49,7 +49,7 @@
 }
 
 .logo-img {
-  height: 90px;
+  height: 70px;
   width: auto;
   display: block;
 }
@@ -186,13 +186,31 @@ Section {
   }
 }
 
+section#inicio .readmorebtn {
+  margin-top: 2rem;
+  width: 150px;
+  height: 50px;
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+  
+
+}
+
 section#inicio .container h1 {
-  justify-content: center;
-    color: var(--blue);
-    font-size: 6rem;
-    font-weight: 400;
+    color: var(--purple);
+    font-size: 7rem;
+    font-weight: 300;
     font-family: 'Times New Roman', Times, serif;
-  }
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 section#inicio .container {
     display: flex;
@@ -233,7 +251,8 @@ section#inicio .container img {
     flex: 1;
     max-width: 400px;
     height: auto;
-}
+    
+  }
 
 section#inicio .container p {
     font-size: 1.2rem;
@@ -270,13 +289,74 @@ section#inicio .container p {
 
 .site-footer {
     font-family: 'Times New Roman', Times, serif ;
-    background-color: var(--purple) ;
+    background-image: url(/Imagenes/backgroundCarrousel.jpeg) ;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 150px 0;
     text-align: center;
 }
 .img-box {
 object-fit: cover;
+}
+
+.product-card {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.product-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.product-card p {
+  margin: 0;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.product-card button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+}
+
+.product-card button:hover {
+  background-color: var(--dark-green);
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .track .img-box {
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    flex: 0 0 100%;
+  }
+  
+  .track .img-box img {
+    flex: 0 0 100%;
+  }
 }
 
 .img-box:hover {
@@ -285,55 +365,77 @@ object-fit: cover;
 }
 
 .track {
-
   background-image: url(/Imagenes/backgroundCarrousel.jpeg);
-  overflow: scroll;
+  overflow: hidden;
   width: 100%;
 }
 .track .img-box {
+  
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
   display: flex;
   gap: .5rem;
   align-items: center;
   transition: transform .6s ease;
 }
 .track .img-box img {
+  
   flex: 0 0 calc((100% - 1.5rem)/4);
-  max-width: none;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  margin: 0 !important;
   display: block;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  max-width: none;
 }
 
 @media(max-width:991px) {
   .track .img-box img {
     flex: 0 0 calc((100% - 1rem)/3);
+    width: 200px;
     height: 200px;
+    border-radius: 50%;
   }
 }
 @media(max-width:768px) {
   .track .img-box img {
     flex: 0 0 calc((100% - .5rem)/2);
+    width: 180px;
     height: 180px;
+    border-radius: 50%;
   }
 }
 @media(max-width:576px) {
+  .track {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  .track .img-box {
+    flex-wrap: nowrap;
+    animation: none;
+  }
+  
   .track .img-box img {
-    flex: 0 0 100%;
-    height: 260px;
+    flex: 0 0 80vw;
+    height: 250px;
+    width: 80vw;
+    border-radius: 50%;
   }
 }
 
 .track .img-box {
   width: max-content; 
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
